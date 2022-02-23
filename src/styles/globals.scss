@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'Averta Std';
+  src: url('/assets/fonts/AvertaStd/AvertaStd-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Averta Std';
+  src: url('/assets/fonts/AvertaStd/AvertaStd-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Averta Std';
+  src: url('/assets/fonts/AvertaStd/AvertaStd-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Averta Std';
+  src: url('/assets/fonts/AvertaStd/AvertaStd-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+
+:root {
+  font-size: 18px;
+}
+
+@tailwind components;
+@tailwind utilities;
