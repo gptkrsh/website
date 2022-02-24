@@ -1,12 +1,12 @@
-import Link from "next/link"
-import { FiTwitter, FiGithub } from "react-icons/fi"
+import Link from 'next/link'
+import config from 'config'
 
-const Navbar = () => {
+export function Navbar() {
   return (
     <nav
       className={[
         /** Font & Text */
-        `font-display text-lg font-semibold`,
+        `font-display text-2xl font-semibold`,
         /** Flex */
         `flex items-center justify-between w-full h-16`,
         /** Padding */
@@ -14,18 +14,31 @@ const Navbar = () => {
       ].join(' ')}
     >
       <Link href={'/'}>
-        <a>krshdev</a>
+        <a
+          className={
+            'm-0 transition-transform hover:-translate-y-0.5 hover:scale-110'
+          }
+        >
+          {config.siteName}
+        </a>
       </Link>
       <div className="inline-flex items-center justify-evenly">
-        <Link href={'https://twitter.com/krshdev'}>
-          <a target='_blank' className="mx-4"><FiTwitter /></a>
-        </Link>
-        <Link href={'https://github.com/krshdev'}>
-          <a target='_blank' className="mx-4"><FiGithub /></a>
-        </Link>
+        {config.socials.map((item, index) => (
+          <Link href={item.url} key={index}>
+            <a
+              className={[
+                /** Spacing */
+                `mx-2 p-2`,
+                /** Hover Animation */
+                `transition-transform hover:-translate-y-0.5 hover:scale-110`,
+              ].join(' ')}
+              target="_blank"
+            >
+              {<item.icon />}
+            </a>
+          </Link>
+        ))}
       </div>
     </nav>
   )
 }
-
-export default Navbar
