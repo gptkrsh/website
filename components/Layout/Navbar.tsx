@@ -6,11 +6,11 @@ export function Navbar() {
     <nav
       className={[
         /** Font & Text */
-        `font-display text-2xl font-semibold`,
+        `font-display text-lg font-semibold`,
         /** Flex */
-        `flex items-center justify-between w-full h-16`,
+        `flex items-center justify-between w-full max-h-14`,
         /** Padding */
-        `px-2 md:px-4 lg:px-10 xl:px-20`,
+        `py-3 px-2 md:px-4 lg:px-10 xl:px-16 2xl:px-20`,
       ].join(' ')}
     >
       <Link href={'/'}>
@@ -27,10 +27,12 @@ export function Navbar() {
           <Link href={item.url} key={index}>
             <a
               className={[
+                /** Font */
+                `text-base`,
                 /** Spacing */
                 `mx-2 p-2`,
                 /** Hover Animation */
-                `transition-transform hover:-translate-y-0.5 hover:scale-110`,
+                `transition-colors text-gray-800 hover:text-opacity-70`,
               ].join(' ')}
               target="_blank"
             >

@@ -6,7 +6,7 @@ const config: Config = {
   name: 'Krish Gupta',
   siteName: 'krshdev',
   role: 'Full Stack Developer',
-  headline: 'Developing experiences through code',
+  headline: ['I turn your ideas into', 'experiences.'],
   socials: [
     {
       name: 'Twitter',
@@ -21,7 +21,7 @@ const config: Config = {
   ],
   meta: {
     title: (name, siteName, role, headline) => `${headline} | ${role} - ${name} | ${siteName}`,
-    description: `I’m a full stack developer, who helps organisations to build seamless unforggetable experiences. I focus on the frontend, and build exceptionally performant sites, using the latest technologies.`,
+    description: `Helping organisations build unforgettable seamless application. I focus on the frontend, and build exceptionally performant & accessible sites.`,
     keywords: ['webdev', 'developer', 'open source', 'javascript'],
     opengraph: {
       siteName: 'krshdev',
@@ -37,7 +37,7 @@ interface Config {
   name: string
   siteName: string
   role: string
-  headline: string
+  headline: Array<string>
   socials: Array<NavigationLink>
   meta: {
     title: (name: string, siteName: string, role: string, headline: string) => string

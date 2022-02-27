@@ -8,7 +8,7 @@ export default function Document() {
     config.name,
     config.siteName,
     config.role,
-    config.headline
+    config.headline.join(' ')
   )
 
   return (
@@ -22,7 +22,7 @@ export default function Document() {
         <meta name="og:description" content={config.meta.description} />
         <meta name="og:image" content={config.meta.opengraph?.banner} />
       </Head>
-      <body className="bg-primary-500 min-h-screen text-white">
+      <body className="min-h-screen text-black">
         <Navbar />
         <Main />
         <NextScript />

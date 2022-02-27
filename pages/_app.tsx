@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     config.name,
     config.siteName,
     config.role,
-    config.headline
+    config.headline.join(' ')
   )
 
   return (
