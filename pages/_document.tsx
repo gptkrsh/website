@@ -22,7 +22,7 @@ export default function Document() {
         <meta name="og:description" content={config.meta.description} />
         <meta name="og:image" content={config.meta.opengraph?.banner} />
       </Head>
-      <body className="min-h-screen text-black">
+      <body className="min-h-screen text-black bg-tertiary-500">
         <Navbar />
         <Main />
         <NextScript />

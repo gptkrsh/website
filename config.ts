@@ -1,6 +1,7 @@
 import { FaTwitter, FaGithub } from 'react-icons/fa/index'
-
 import { IconType } from 'react-icons/lib'
+
+// The Projects in components/Home/Projects.tsx, should still be edited manually.
 
 const config: Config = {
   name: 'Krish Gupta',
