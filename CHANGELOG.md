@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/krshdev/krshdev.co/compare/v0.2.1...v0.3.0) (2022-04-20)
+
+
+### Features
+
+* redirects ([7400609](https://github.com/krshdev/krshdev.co/commit/74006090a1bb0a3b9a90f7e9876e787332d5cff3))
+
+
+
 ## [0.2.1](https://github.com/krshdev/krshdev.co/compare/v0.2.0...v0.2.1) (2022-04-20)
 
 
