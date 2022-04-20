@@ -1,3 +1,12 @@
+## [0.2.1](https://github.com/krshdev/krshdev.co/compare/v0.2.0...v0.2.1) (2022-04-20)
+
+
+### Bug Fixes
+
+* add smooth scrolling ([ff5a651](https://github.com/krshdev/krshdev.co/commit/ff5a651ce38a2806987c9ea5a549d8cbbc69c118))
+
+
+
 # [0.2.0](https://github.com/krshdev/krshdev.co/compare/v0.1.0...v0.2.0) (2022-04-20)
 
 
