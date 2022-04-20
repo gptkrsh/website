@@ -7,5 +7,29 @@ module.exports = {
     resolve: {
         root: path.resolve(__dirname, 'src'),
     }
+  },
+  async redirects() {
+    return [
+      {
+        source: '/go/resume',
+        destination: 'https://drive.google.com/file/d/1k0DwjZNISS4kX1f03SkiZr8-IknAvp9_/view?usp=sharing',
+        permanent: true,
+      },
+      {
+        source: '/go/github',
+        destination: 'https://github.com/krshdev',
+        permanent: true,
+      },
+      {
+        source: '/go/twitter',
+        destination: 'https://twitter.com/krshdev',
+        permanent: true,
+      },
+      {
+        source: '/go/linkedin',
+        destination: 'https://linkedin.com/in/krshdev',
+        permanent: true,
+      },
+    ]
   }
 }
