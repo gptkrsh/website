@@ -1,3 +1,12 @@
+## [0.3.1](https://github.com/krshdev/krshdev.co/compare/v0.3.0...v0.3.1) (2022-04-21)
+
+
+### Bug Fixes
+
+* bugs in responsiveness ([94d8f8b](https://github.com/krshdev/krshdev.co/commit/94d8f8b5bf6ef33e7becdbc9df029b8177c37abd))
+
+
+
 # [0.3.0](https://github.com/krshdev/krshdev.co/compare/v0.2.1...v0.3.0) (2022-04-20)
 
 
