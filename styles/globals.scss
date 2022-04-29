@@ -39,3 +39,115 @@
 
 @tailwind components;
 @tailwind utilities;
+
+.gradient-border {
+  --borderWidth: 3px;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: calc(-1 * var(--borderWidth));
+    left: calc(-1 * var(--borderWidth));
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+    z-index: -1;
+    animation: animatedgradient 3s ease alternate infinite;
+    background-size: 300% 300%;
+  }
+}
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@keyframes flying-pulse {
+  0% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(2rem);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+}
+
+@keyframes letter-move {
+  0% {
+    transform: translateY(0);
+    transform-origin: 50% 50%;
+    text-shadow: none;
+  }
+  100% {
+    transform: translateY(-50px);
+    transform-origin: 50% 50%;
+    text-shadow: 0 1px 0 #aaaaaa, 0 2px 0 #aaaaaa, 0 3px 0 #aaaaaa, 0 4px 0 #aaaaaa, 0 5px 0 #aaaaaa, 0 6px 0 #aaaaaa, 0 7px 0 #aaaaaa, 0 8px 0 #aaaaaa, 0 9px 0 #aaaaaa, 0 50px 30px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.name {
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.letters {
+  color: white;
+  font-size: 7em;
+  font-family: "Gorditas", Arial, sans-serif;
+  font-weight: 700;
+  -webkit-animation: letter-move 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite alternate-reverse both;
+  animation: letter-move 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite alternate-reverse both;
+}
+
+.letters-9 {
+  animation-delay: 0.9s;
+}
+
+.letters-8 {
+  animation-delay: 0.8s;
+}
+
+.letters-7 {
+  animation-delay: 0.7s;
+}
+
+.letters-6 {
+  animation-delay: 0.6s;
+}
+
+.letters-5 {
+  animation-delay: 0.5s;
+}
+
+.letters-4 {
+  animation-delay: 0.4s;
+}
+
+.letters-3 {
+  animation-delay: 0.3s;
+}
+
+.letters-2 {
+  animation-delay: 0.2s;
+}
+
+.letters-1 {
+  animation-delay: 0.1s;
+}

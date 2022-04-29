@@ -1,38 +1,72 @@
-import Link from 'next/link'
 import Image from 'next/image'
-import config from 'config'
-import heroImage from 'assets/images/profile.png'
+
+import ProfilePicture from 'assets/images/krshkodes.png'
 
 function Hero() {
   return (
     <header
-      className="flex w-full my-8 items-center justify-evenly px-2 font-display md:px-4 lg:px-10 xl:px-16 2xl:px-20"
+      className={[
+        /** Font & Text */
+        `font-display text-gray-300`,
+        /** Flex */
+        `flex w-full items-center justify-evenly`,
+        /** Spacing */
+        `my-8 px-2 md:px-4 lg:px-10 xl:px-16 2xl:px-20`,
+        /** Overflow */
+        `relative overflow-hidden`,
+      ].join(' ')}
+      style={{ height: 'calc(100vh - 6rem)' }}
     >
-      <div className="flex w-full flex-col items-center text-center lg:block lg:text-left">
-        <h4 className="mb-3 hidden text-2xl lg:block">
-          Hey, I'm <b>{config.name.split(' ')[0]}</b>
-        </h4>
-        <div className="mb-5 space-y-2 text-4xl md:text-5xl font-black">
-          <h1>{config.headline[0]} <span className="text-brand-500">{config.headline[1]}</span></h1>
-        </div>
-        <p className="mb-5 max-w-prose p-4 text-lg md:text-xl text-opacity-70 lg:p-0">
-          {config.meta.description}
+      <div className={[`w-full`].join(' ')}>
+        <h1
+          className={[
+            /** Font & Text */
+            `text-3xl lg:text-4xl xl:text-6xl font-black leading-[1.2em] max-w-4xl`,
+            /** Spacing */
+            `mb-6`,
+          ].join(' ')}
+        >
+          Professionalism is a Passion.
+        </h1>
+        <p
+          className={[
+            /** Container */
+            `max-w-4xl`,
+            /** Spacing */
+            `mb-6`,
+            /** Font & Text */
+            `text-lg`,
+          ].join(' ')}
+        >
+          Helping organisations build unforgettable seamless application. I
+          focus on the frontend, and build exceptionally performant and
+          accessible sites.
         </p>
-        <div className="flex flex-row space-x-5 text-lg md:text-xl">
-          <Link href="#projects">
-            <a className="max-w-max rounded-sm border-4 border-brand-500 bg-brand-500 px-4 py-1 text-white transition-colors hover:bg-opacity-0 hover:text-black">
-              <span className="hidden md:inline">View</span> Projects
-            </a>
-          </Link>
-          <Link href="/go/resume">
-            <a target='_blank' className="max-w-max rounded-sm border-4 border-brand-500 bg-brand-500 bg-opacity-0 px-4 py-1 text-black transition-colors hover:bg-opacity-100 hover:text-white">
-              Resume
-            </a>
-          </Link>
-        </div>
+        <button
+          className={[
+            `text-lg`,
+            `block w-max px-4 py-2`,
+            `bg-gray-900`,
+            /** Spacing */
+            `mb-6`,
+            /** Custom Classes */
+            'gradient-border',
+          ].join(' ')}
+        >
+          hi@krshkodes.co
+        </button>
       </div>
-      <div className="hidden w-max h-[50%] lg:flex items-center flex-col">
-        <Image src={heroImage} className="rounded-full" />
+      <div
+        className={[
+          `bg-gray-800 opacity-30`,
+          `p-4`,
+          `rounded-lg`,
+          `h-full`,
+          `absolute -z-10 right-24 top-24 overflow-hidden`,
+        ].join(' ')}
+        style={{ animation: 'flying-pulse 8s linear infinite' }}
+      >
+        <Image src={ProfilePicture}></Image>
       </div>
     </header>
   )
