@@ -2,11 +2,11 @@ import 'styles/globals.scss'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import config from 'config'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { LoadingScreen } from 'components/Layout/LoadingScreen'
 import { Navbar } from 'components/Layout/Navbar'
-import { useRouter } from 'next/router'
+import CustomCursor from 'components/Layout/CustomCursor'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const title = config.meta.title(
@@ -16,11 +16,14 @@ function MyApp({ Component, pageProps }: AppProps) {
     config.headline.join(' ')
   )
 
+  const ReactBody = useRef<HTMLDivElement>(null)
+
   return (
-    <>
+    <div ref={ReactBody}>
       <Head>
         <title>{title}</title>
       </Head>
+      <CustomCursor />
       <React.Fragment>
         <motion.div
           initial="visible"
@@ -30,14 +33,14 @@ function MyApp({ Component, pageProps }: AppProps) {
               opacity: 0,
               zIndex: -50,
               transitionEnd: {
-                display: 'none'
-              }
+                display: 'none',
+              },
             },
             visible: {
               opacity: 1,
             },
           }}
-          transition={{ ease: 'easeOut', delay: 1.5, duration: .5 }}
+          transition={{ ease: 'easeOut', delay: 1.5, duration: 0.5 }}
         >
           <LoadingScreen />
         </motion.div>
@@ -52,13 +55,13 @@ function MyApp({ Component, pageProps }: AppProps) {
               opacity: 1,
             },
           }}
-          transition={{ ease: 'easeOut', delay: 2, duration: .5 }}
+          transition={{ ease: 'easeOut', delay: 2, duration: 0.5 }}
         >
           <Navbar />
           <Component {...pageProps} />
         </motion.div>
       </React.Fragment>
-    </>
+    </div>
   )
 }
 
