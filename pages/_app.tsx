@@ -2,10 +2,11 @@ import 'styles/globals.scss'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import config from 'config'
-import React from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import React, { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 import { LoadingScreen } from 'components/Layout/LoadingScreen'
 import { Navbar } from 'components/Layout/Navbar'
+import { useRouter } from 'next/router'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const title = config.meta.title(
@@ -22,21 +23,40 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <React.Fragment>
         <motion.div
-          animate={{
-            opacity: 0,
-            transitionEnd: {
-              display: 'none',
+          initial="visible"
+          animate="hidden"
+          variants={{
+            hidden: {
+              opacity: 0,
+              zIndex: -50,
+              transitionEnd: {
+                display: 'none'
+              }
+            },
+            visible: {
+              opacity: 1,
             },
           }}
-          transition={{ delay: 2, duration: 0.5 }}
+          transition={{ ease: 'easeOut', delay: 1.5, duration: .5 }}
         >
           <LoadingScreen />
         </motion.div>
-        <motion.div animate={{ x: -100 }} transition={{ duration: 0.2 }}>
-          <div className="flex items-center justify-evenly fixed bg-gray-900 w-full h-full z-40"></div>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {
+              opacity: 0,
+            },
+            visible: {
+              opacity: 1,
+            },
+          }}
+          transition={{ ease: 'easeOut', delay: 2, duration: .5 }}
+        >
+          <Navbar />
+          <Component {...pageProps} />
         </motion.div>
-        <Navbar />
-        <Component {...pageProps} />
       </React.Fragment>
     </>
   )

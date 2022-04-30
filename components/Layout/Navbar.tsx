@@ -12,7 +12,7 @@ export function Navbar() {
         `py-3 px-2 md:px-4 lg:px-10 xl:px-16 2xl:px-20`,
       ].join(' ')}
     >
-      <Link href={'/'}>
+      <Link href="/">
         <a
           className={[
             /** Font & Text */
@@ -20,7 +20,7 @@ export function Navbar() {
             /** Spacing */
             `m-0`,
             /** Animation */
-            `transition-transform hover:-translate-y-0.5 hover:scale-110`
+            `transition-transform hover:-translate-y-0.5 hover:scale-110`,
           ].join(' ')}
         >
           krshkodes
