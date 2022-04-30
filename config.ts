@@ -5,18 +5,18 @@ import { IconType } from 'react-icons/lib'
 
 const config: Config = {
   name: 'Krish Gupta',
-  siteName: 'krshdev',
+  siteName: 'krshkodes',
   role: 'Full Stack Developer',
   headline: ['I turn your ideas into', 'experiences.'],
   socials: [
     {
       name: 'Twitter',
-      url: 'https://twitter.com/krshdev',
+      url: 'https://twitter.com/krshkodes',
       icon: FaTwitter,
     },
     {
       name: 'Github',
-      url: 'https://github.com/krshdev',
+      url: 'https://github.com/krshkodes',
       icon: FaGithub,
     },
   ],
@@ -25,8 +25,8 @@ const config: Config = {
     description: `Helping organisations build unforgettable seamless application. I focus on the frontend, and build exceptionally performant & accessible sites.`,
     keywords: ['webdev', 'developer', 'open source', 'javascript'],
     opengraph: {
-      siteName: 'krshdev',
-      url: 'https://krshdev.co',
+      siteName: 'krshkodes',
+      url: 'https://krshkodes.co',
       banner: ''
     }
   }

@@ -17,17 +17,17 @@ module.exports = {
       },
       {
         source: '/go/github',
-        destination: 'https://github.com/krshdev',
+        destination: 'https://github.com/krshkodes',
         permanent: true,
       },
       {
         source: '/go/twitter',
-        destination: 'https://twitter.com/krshdev',
+        destination: 'https://twitter.com/krshkodes',
         permanent: true,
       },
       {
         source: '/go/linkedin',
-        destination: 'https://linkedin.com/in/krshdev',
+        destination: 'https://linkedin.com/in/krshkodes',
         permanent: true,
       },
     ]

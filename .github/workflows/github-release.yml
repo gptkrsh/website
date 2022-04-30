@@ -8,7 +8,7 @@ on:
 
 jobs:
   changelog:
-    if: github.repository_owner == 'krshdev'
+    if: github.repository_owner == 'krshkodes'
     runs-on: ubuntu-latest
 
     steps:
