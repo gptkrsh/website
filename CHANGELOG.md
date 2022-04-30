@@ -1,3 +1,12 @@
+# [0.6.0](https://github.com/krshkodes/krshkodes.co/compare/v0.5.0...v0.6.0) (2022-04-30)
+
+
+### Features
+
+* tweaks in css ([2986cbe](https://github.com/krshkodes/krshkodes.co/commit/2986cbec414701bc633518e4f7589a554cdbe0bb))
+
+
+
 # [0.5.0](https://github.com/krshkodes/krshkodes.co/compare/v0.4.0...v0.5.0) (2022-04-30)
 
 
@@ -38,15 +47,6 @@
 ### Features
 
 * redirects ([7400609](https://github.com/krshkodes/krshkodes.co/commit/74006090a1bb0a3b9a90f7e9876e787332d5cff3))
-
-
-
-## [0.2.1](https://github.com/krshkodes/krshkodes.co/compare/v0.2.0...v0.2.1) (2022-04-20)
-
-
-### Bug Fixes
-
-* add smooth scrolling ([ff5a651](https://github.com/krshkodes/krshkodes.co/commit/ff5a651ce38a2806987c9ea5a549d8cbbc69c118))
 
 
 
