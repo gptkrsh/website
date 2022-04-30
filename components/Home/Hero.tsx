@@ -1,5 +1,4 @@
 import Image from 'next/image'
-
 import ProfilePicture from 'assets/images/krshkodes.png'
 import Link from 'next/link'
 import {
@@ -9,8 +8,25 @@ import {
   FiInstagram,
   FiBook,
 } from 'react-icons/fi'
+import { useSpring, animated } from 'react-spring'
+import { useEffect, useRef, useState } from 'react'
 
 function Hero() {
+  const [xys, set] = useState([0, 0, 1])
+
+  const props = useSpring({ xys, config: { mass: 1, tension: 280, friction: 120 } })
+
+  const ref = useRef(null)
+
+  const calc = (x: number, y: number, rect: any, onlyImg: Boolean) => [
+    -(y - rect.top - rect.height / 2) / (onlyImg ? 4 : 20),
+    (x - rect.left - rect.width / 2) / (onlyImg ? 4 : 20),
+    onlyImg ? 1.05 : 1.01,
+  ]
+
+  const trans = (x: number, y: number, s: number | string) =>
+    `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
+
   return (
     <header
       className={[
@@ -62,39 +78,80 @@ function Hero() {
             accessible sites.
           </p>
           <Link href="mailto:hi@krshkodes.co">
-            <a className="flex items-center justify-center w-full mb-8 md:block">
-              <button
-                className={[
-                  `text-lg`,
-                  `block w-max px-4 py-2`,
-                  `bg-gray-900`,
-                  /** Custom Classes */
-                  'gradient-border',
-                ].join(' ')}
+            <div ref={ref}>
+              <animated.div
+                style={{ transform: props.xys.to(trans) }}
+                onMouseLeave={() => set([0, 0, 1])}
+                onMouseMove={(e) => {
+                  //@ts-ignore
+                  const rect = ref.current.getBoundingClientRect()
+                  set(calc(e.clientX, e.clientY, rect, false))
+                }}
               >
-                hi@krshkodes.co
-              </button>
-            </a>
+                <a
+                  className="flex items-center justify-center w-full mb-8 md:block"
+                >
+                  <button
+                    className={[
+                      `text-lg`,
+                      `block w-max px-4 py-2`,
+                      `bg-gray-900`,
+                      /** Custom Classes */
+                      'gradient-border',
+                    ].join(' ')}
+                  >
+                    hi@krshkodes.co
+                  </button>
+                </a>
+              </animated.div>
+            </div>
           </Link>
-          <div className={[
-            `flex items-center`,
-            `text-gray-200 text-xl lg:text-2xl`,
-            `my-6 space-x-6`,
-          ].join(' ')}>
-            <Link href='https://twitter.com/krshkodes'>
-              <a target='_blank' className='hover:text-[#1DA1F2] hover:rotate-12 transition-all'><FiTwitter/></a>
+          <div
+            className={[
+              `flex items-center`,
+              `text-gray-200 text-xl lg:text-2xl`,
+              `my-6 space-x-6`,
+            ].join(' ')}
+          >
+            <Link href="https://twitter.com/krshkodes">
+              <a
+                target="_blank"
+                className="hover:text-[#1DA1F2] hover:rotate-12 transition-all"
+              >
+                <FiTwitter />
+              </a>
             </Link>
-            <Link href='https://github.com/krshkodes'>
-              <a target='_blank' className='hover:text-[#fff] hover:rotate-12 transition-all'><FiGithub/></a>
+            <Link href="https://github.com/krshkodes">
+              <a
+                target="_blank"
+                className="hover:text-[#fff] hover:rotate-12 transition-all"
+              >
+                <FiGithub />
+              </a>
             </Link>
-            <Link href='https://linkedin.com/in/krshkodes'>
-              <a target='_blank' className='hover:text-[#0A66C2] hover:rotate-12 transition-all'><FiLinkedin/></a>
+            <Link href="https://linkedin.com/in/krshkodes">
+              <a
+                target="_blank"
+                className="hover:text-[#0A66C2] hover:rotate-12 transition-all"
+              >
+                <FiLinkedin />
+              </a>
             </Link>
-            <Link href='https://instagram.com/krshkodes'>
-              <a target='_blank' className='hover:text-[#C13584] hover:rotate-12 transition-all'><FiInstagram/></a>
+            <Link href="https://instagram.com/krshkodes">
+              <a
+                target="_blank"
+                className="hover:text-[#C13584] hover:rotate-12 transition-all"
+              >
+                <FiInstagram />
+              </a>
             </Link>
-            <Link href='https://blog.krshkodes.co'>
-              <a target='_blank' className='hover:text-[#fff] hover:rotate-12 transition-all'><FiBook/></a>
+            <Link href="https://blog.krshkodes.co">
+              <a
+                target="_blank"
+                className="hover:text-[#fff] hover:rotate-12 transition-all"
+              >
+                <FiBook />
+              </a>
             </Link>
           </div>
         </div>
