@@ -1,3 +1,12 @@
+# [0.5.0](https://github.com/krshkodes/krshkodes.co/compare/v0.4.0...v0.5.0) (2022-04-30)
+
+
+### Features
+
+* social icons ([dff9b4c](https://github.com/krshkodes/krshkodes.co/commit/dff9b4caba16d542796bcc4df717a3ae4079dc8b))
+
+
+
 # [0.4.0](https://github.com/krshkodes/krshkodes.co/compare/v0.3.1...v0.4.0) (2022-04-30)
 
 
@@ -38,15 +47,6 @@
 ### Bug Fixes
 
 * add smooth scrolling ([ff5a651](https://github.com/krshkodes/krshkodes.co/commit/ff5a651ce38a2806987c9ea5a549d8cbbc69c118))
-
-
-
-# [0.2.0](https://github.com/krshkodes/krshkodes.co/compare/v0.1.0...v0.2.0) (2022-04-20)
-
-
-### Features
-
-* add projects and new theme ([fd77847](https://github.com/krshkodes/krshkodes.co/commit/fd7784785fed381731fe4da7babaa4e8966b2c9b))
 
 
 
