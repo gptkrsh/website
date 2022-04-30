@@ -1,3 +1,19 @@
+# [0.4.0](https://github.com/krshkodes/krshkodes.co/compare/v0.3.1...v0.4.0) (2022-04-30)
+
+
+### Bug Fixes
+
+* font not included ([a695bbc](https://github.com/krshkodes/krshkodes.co/commit/a695bbcad8828487681846ef812b0c98015f4444))
+
+
+### Features
+
+* rebrand ([494cb37](https://github.com/krshkodes/krshkodes.co/commit/494cb373d8a7237417f8bb497b1da0733082315b))
+* redeploy ([fc4a890](https://github.com/krshkodes/krshkodes.co/commit/fc4a8903dcf897a8b0ed82272bf2c2a47e08817d))
+* username change ([3cc076a](https://github.com/krshkodes/krshkodes.co/commit/3cc076a60ec78f2d32b124fd0d3661c9430207a1))
+
+
+
 ## [0.3.1](https://github.com/krshkodes/krshkodes.co/compare/v0.3.0...v0.3.1) (2022-04-21)
 
 
@@ -31,16 +47,6 @@
 ### Features
 
 * add projects and new theme ([fd77847](https://github.com/krshkodes/krshkodes.co/commit/fd7784785fed381731fe4da7babaa4e8966b2c9b))
-
-
-
-# [0.1.0](https://github.com/krshkodes/krshkodes.co/compare/a4f1f59aa343c6d280ada31770df9310e8b7edc2...v0.1.0) (2022-02-27)
-
-
-### Features
-
-* add hero ([a4f1f59](https://github.com/krshkodes/krshkodes.co/commit/a4f1f59aa343c6d280ada31770df9310e8b7edc2))
-* hero ([4712373](https://github.com/krshkodes/krshkodes.co/commit/47123732a74f591914d6938b50f0be501855920e))
 
 
 
