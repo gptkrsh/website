@@ -6,11 +6,11 @@ export function LoadingScreen() {
         <div className="letters letters-1 r">r</div>
         <div className="letters letters-2 s">s</div>
         <div className="letters letters-3 h">h</div>
-        <div className="letters letters-4 k">k</div>
-        <div className="letters letters-5 o">o</div>
-        <div className="letters letters-6 d">d</div>
-        <div className="letters letters-7 e">e</div>
-        <div className="letters letters-8 s">s</div>
+        <div className="letters letters-4 k hidden md:block">k</div>
+        <div className="letters letters-5 o hidden md:block">o</div>
+        <div className="letters letters-6 d hidden md:block">d</div>
+        <div className="letters letters-7 e hidden md:block">e</div>
+        <div className="letters letters-8 s hidden md:block">s</div>
       </div>
     </div>
   )
