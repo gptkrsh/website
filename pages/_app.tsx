@@ -6,7 +6,6 @@ import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import { LoadingScreen } from 'components/Layout/LoadingScreen'
 import { Navbar } from 'components/Layout/Navbar'
-import CustomCursor from 'components/Layout/CustomCursor'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const title = config.meta.title(
@@ -16,14 +15,11 @@ function MyApp({ Component, pageProps }: AppProps) {
     config.headline.join(' ')
   )
 
-  const ReactBody = useRef<HTMLDivElement>(null)
-
   return (
-    <div ref={ReactBody}>
+    <div>
       <Head>
         <title>{title}</title>
       </Head>
-      <CustomCursor />
       <React.Fragment>
         <motion.div
           initial="visible"
