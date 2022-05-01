@@ -1,26 +1,32 @@
 import { Html, Head, Main, NextScript } from 'next/document'
-import { Navbar } from 'components/Layout/Navbar'
-
-import config from 'config'
 
 export default function Document() {
-  const title = config.meta.title(
-    config.name,
-    config.siteName,
-    config.role,
-    config.headline.join(' ')
-  )
-
   return (
-    <Html>
+    <Html lang='en'>
       <Head>
-        <meta name="description" content={config.meta.description} />
-        <meta name="keywords" content={config.meta.keywords.join(', ')} />
-        <meta name="og:site_name" content={config.meta.opengraph?.siteName} />
-        <meta name="og:title" content={title} />
-        <meta name="og:url" content={config.meta.opengraph?.url} />
-        <meta name="og:description" content={config.meta.description} />
-        <meta name="og:image" content={config.meta.opengraph?.banner} />
+        <meta
+          name="description"
+          content="Helping organisations build unforgettable seamless application. I focus on the frontend, and build exceptionally performant and accessible sites."
+        />
+        <meta
+          name="keywords"
+          content={['webdev', 'developer', 'open source', 'javascript'].join(
+            ', '
+          )}
+        />
+        <meta name="og:site_name" content="krshkodes" />
+        <meta
+          name="og:title"
+          content="Student Full Stack Developer from Delhi | Krish Gupta | krshkodes"
+        />
+        <meta name="og:url" content="https://www.krshkodes.co" />
+        <meta
+          name="og:description"
+          content="Helping organisations build unforgettable seamless application. I focus on the frontend, and build exceptionally performant and accessible sites."
+        />
+        <meta name="og:image" content="" />
+        <link rel="preconnect" href="https://vitals.vercel-insights.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
       </Head>
       <body className="min-h-screen text-gray-400 bg-gray-900">
         <Main />
