@@ -128,6 +128,7 @@ function Hero() {
             src={HeroIllustration}
             alt=""
             placeholder="blur"
+            loading="lazy"
           />
         </div>
       </div>
