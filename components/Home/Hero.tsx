@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 import HeroIllustration from 'public/assets/images/hero.png'
 import {
   FiTwitter,
@@ -22,18 +23,53 @@ function Hero() {
       ].join(' ')}
     >
       <div className="w-full">
-        <h1
-          className={[
-            /** Font & Text */
-            `text-3xl lg:text-4xl 2xl:text-6xl font-black leading-[1.2em]`,
-            /** Spacing */
-            `mb-6`,
-            `block`,
-          ].join(' ')}
+        <motion.div
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          variants={{
+            initial: {
+              opacity: 0,
+            },
+            animate: {
+              x: 0,
+              opacity: 1,
+            },
+            exit: {
+              opacity: 0,
+            },
+          }}
+          transition={{ delay: 0, duration: 0.3, ease: 'easeInOut' }}
         >
-          Professionalism is a Passion.
-        </h1>
-        <p
+          <h1
+            className={[
+              /** Font & Text */
+              `text-3xl lg:text-4xl 2xl:text-6xl font-black leading-[1.2em]`,
+              /** Spacing */
+              `mb-6`,
+              `block`,
+            ].join(' ')}
+          >
+            Professionalism is a Passion.
+          </h1>
+        </motion.div>
+        <motion.p
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          variants={{
+            initial: {
+              opacity: 0,
+            },
+            animate: {
+              x: 0,
+              opacity: 1,
+            },
+            exit: {
+              opacity: 0,
+            },
+          }}
+          transition={{ delay: 0.2, duration: 0.3, ease: 'easeInOut' }}
           className={[
             /** Spacing */
             `mb-6`,
@@ -45,8 +81,26 @@ function Hero() {
           Helping organisations build unforgettable seamless application. I
           focus on the frontend, and build exceptionally performant and
           accessible sites.
-        </p>
-        <div className="flex items-center justify-center mb-6 md:block md:space-x-4">
+        </motion.p>
+        <motion.div
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          variants={{
+            initial: {
+              opacity: 0,
+            },
+            animate: {
+              x: 0,
+              opacity: 1,
+            },
+            exit: {
+              opacity: 0,
+            },
+          }}
+          transition={{ delay: 0.4, duration: 0.3, ease: 'easeInOut' }}
+          className="flex items-center justify-center mb-6 md:block md:space-x-4"
+        >
           <Link prefetch={false} href="mailto:hi@krshkodes.co">
             <a className="w-full mb-8 max-w-max">
               <button
@@ -62,8 +116,24 @@ function Hero() {
               </button>
             </a>
           </Link>
-        </div>
-        <div
+        </motion.div>
+        <motion.div
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          variants={{
+            initial: {
+              opacity: 0,
+            },
+            animate: {
+              x: 0,
+              opacity: 1,
+            },
+            exit: {
+              opacity: 0,
+            },
+          }}
+          transition={{ delay: 0.6, duration: 0.3, ease: 'easeInOut' }}
           className={[
             `flex items-center justify-center md:justify-start`,
             `text-gray-200 lg:text-lg 2xl:text-xl`,
@@ -115,12 +185,32 @@ function Hero() {
               <FiBook />
             </a>
           </Link>
-        </div>
+        </motion.div>
       </div>
-      <div className="flex w-full scale-75 lg:scale-100 items-center justify-center relative">
+      <motion.div
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={{
+          initial: {
+            scale: 1.2,
+            opacity: 0,
+          },
+          animate: {
+            scale: 1,
+            opacity: 1,
+          },
+          exit: {
+            scale: 0.75,
+            opacity: 0,
+          },
+        }}
+        transition={{ delay: 0.8, duration: 0.3, ease: 'easeInOut' }}
+        className="flex w-full scale-75 lg:scale-100 items-center justify-center relative"
+      >
         <div>
           <Image
-            layout='raw'
+            layout="raw"
             width="371"
             height="409"
             sizes="(max-width: 1024px) 315, 347px,
@@ -131,7 +221,7 @@ function Hero() {
             loading="lazy"
           />
         </div>
-      </div>
+      </motion.div>
     </header>
   )
 }
