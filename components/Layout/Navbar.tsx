@@ -9,7 +9,7 @@ export function Navbar() {
         /** Flex */
         `flex items-center justify-between w-full max-h-14`,
         /** Spacing */
-        `py-3 px-2 md:px-4 lg:px-10 xl:px-16 2xl:px-20`,
+        `py-3 px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24`,
       ].join(' ')}
     >
       <Link href="/">
