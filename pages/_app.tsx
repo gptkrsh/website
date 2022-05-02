@@ -1,8 +1,9 @@
 import 'styles/globals.scss'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
 import React from 'react'
-import { Navbar } from 'components/Layout/Navbar'
+const Navbar = dynamic(() => import('components/Layout/Navbar'))
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

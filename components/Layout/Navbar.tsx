@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export function Navbar() {
+export default function Navbar() {
   return (
     <nav
       className={[

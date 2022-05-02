@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import { IncomingMessage, ServerResponse } from 'http'
 
 export default function Document() {
   return (
@@ -34,4 +35,15 @@ export default function Document() {
       </body>
     </Html>
   )
+}
+
+export async function getServerSideProps({ _req: IncomingResponse, res: ServerResponse }) {
+  res.setHeader(
+    'Cache-Control',
+    'public, s-maxage=10, stale-while-revalidate=59'
+  )
+
+  return {
+    props: {},
+  }
 }
