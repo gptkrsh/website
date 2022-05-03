@@ -23,54 +23,37 @@ function Hero () {
         'my-8 md:py-20 lg:[height:calc(100vh_-_8rem)] px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24'
       ].join(' ')}
     >
-      <div className="w-full">
-        <motion.div
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          variants={{
-            initial: {
-              opacity: 0
-            },
-            animate: {
-              x: 0,
-              opacity: 1
-            },
-            exit: {
-              opacity: 0
-            }
-          }}
-          transition={{ delay: 0, duration: 0.2, ease: 'easeInOut' }}
+      <motion.div
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={{
+          initial: {
+            opacity: 0
+          },
+          animate: {
+            x: 0,
+            opacity: 1
+          },
+          exit: {
+            opacity: 0
+          }
+        }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
+        className="w-full"
+      >
+        <h1
+          className={[
+            /** Font & Text */
+            'text-3xl lg:text-4xl 2xl:text-6xl font-black leading-[1.2em]',
+            /** Spacing */
+            'mb-6',
+            'block'
+          ].join(' ')}
         >
-          <h1
-            className={[
-              /** Font & Text */
-              'text-3xl lg:text-4xl 2xl:text-6xl font-black leading-[1.2em]',
-              /** Spacing */
-              'mb-6',
-              'block'
-            ].join(' ')}
-          >
-            Professionalism is a Passion.
-          </h1>
-        </motion.div>
-        <motion.p
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          variants={{
-            initial: {
-              opacity: 0
-            },
-            animate: {
-              x: 0,
-              opacity: 1
-            },
-            exit: {
-              opacity: 0
-            }
-          }}
-          transition={{ delay: 0.1, duration: 0.2, ease: 'easeInOut' }}
+          Professionalism is a Passion.
+        </h1>
+        <p
           className={[
             /** Spacing */
             'mb-6',
@@ -82,26 +65,8 @@ function Hero () {
           Helping organisations build unforgettable seamless application. I
           focus on the frontend, and build exceptionally performant and
           accessible sites.
-        </motion.p>
-        <motion.div
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          variants={{
-            initial: {
-              opacity: 0
-            },
-            animate: {
-              x: 0,
-              opacity: 1
-            },
-            exit: {
-              opacity: 0
-            }
-          }}
-          transition={{ delay: 0.2, duration: 0.2, ease: 'easeInOut' }}
-          className="flex items-center justify-center mb-6 md:block md:space-x-4"
-        >
+        </p>
+        <div className="flex items-center justify-center mb-6 md:block md:space-x-4">
           <Link prefetch={false} href="mailto:hi@krshkodes.co">
             <a className="w-full mb-8 max-w-max">
               <button
@@ -117,24 +82,8 @@ function Hero () {
               </button>
             </a>
           </Link>
-        </motion.div>
-        <motion.div
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          variants={{
-            initial: {
-              opacity: 0
-            },
-            animate: {
-              x: 0,
-              opacity: 1
-            },
-            exit: {
-              opacity: 0
-            }
-          }}
-          transition={{ delay: 0.3, duration: 0.2, ease: 'easeInOut' }}
+        </div>
+        <div
           className={[
             'flex items-center justify-center md:justify-start',
             'text-gray-200 lg:text-lg 2xl:text-xl',
@@ -186,8 +135,8 @@ function Hero () {
               <FiBook />
             </a>
           </Link>
-        </motion.div>
-      </div>
+        </div>
+      </motion.div>
       <motion.div
         initial="initial"
         animate="animate"
@@ -206,7 +155,7 @@ function Hero () {
             opacity: 0
           }
         }}
-        transition={{ delay: 0.6, duration: 0.5, ease: 'easeInOut' }}
+        transition={{ delay: 0.3, duration: 0.5, ease: 'easeInOut' }}
         className="flex w-full items-center justify-center relative overflow-hidden"
       >
         <div>
@@ -220,7 +169,7 @@ function Hero () {
             alt=""
             placeholder="blur"
             loading="lazy"
-            className='scale-75 lg:scale-100 overflow-hidden'
+            className="scale-75 lg:scale-100 overflow-hidden"
           />
         </div>
       </motion.div>
