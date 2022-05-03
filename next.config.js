@@ -7,7 +7,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 /** @type {import('next').NextConfig} */
 module.exports = withPlugins([withBundleAnalyzer], {
-  basePath: '',
   images: {
     formats: ['image/webp']
   },
@@ -22,10 +21,10 @@ module.exports = withPlugins([withBundleAnalyzer], {
   redirects: async () => {
     return [{
       source: '/links',
-      destination: 'https://links.krshkodes.co'
+      destination: 'https://links.krshkodes.co',
+      permanent: true
     }]
   },
-  assetPrefix: isProd ? 'https://raw.githubusercontent.com/krshkodes/krshkodes.co/main/public' : '',
   /**
    *
    * @param {import('webpack').Configuration} config
@@ -41,7 +40,7 @@ module.exports = withPlugins([withBundleAnalyzer], {
       })
     }
 
-    return { ...config }
+    return config
   },
   compress: true,
   poweredByHeader: false,
