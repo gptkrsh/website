@@ -5,7 +5,7 @@ module.exports = {
   reactStrictMode: true,
   webpack: {
     resolve: {
-      root: path.resolve(__dirname),
+      root: path.resolve(__dirname)
     }
   },
   images: {

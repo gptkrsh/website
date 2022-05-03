@@ -1,11 +1,15 @@
-import 'styles/globals.scss'
-import type { AppProps } from 'next/app'
-import Head from 'next/head'
-import dynamic from 'next/dynamic'
 import React from 'react'
+import type { AppProps } from 'next/app'
+
+import 'styles/globals.scss'
+
+import Head from 'next/head'
+
+import dynamic from 'next/dynamic'
+
 const Navbar = dynamic(() => import('components/Layout/Navbar'))
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp ({ Component, pageProps }: AppProps) {
   return (
     <div>
       <Head>

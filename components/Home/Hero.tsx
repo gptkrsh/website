@@ -1,3 +1,4 @@
+import * as React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
@@ -7,19 +8,19 @@ import {
   FiGithub,
   FiLinkedin,
   FiInstagram,
-  FiBook,
+  FiBook
 } from 'react-icons/fi'
 
-function Hero() {
+function Hero () {
   return (
     <header
       className={[
         /** Font & Text */
-        `font-display w-full text-gray-300 text-center md:text-left md:justify-evenly`,
+        'font-display w-full text-gray-300 text-center md:text-left md:justify-evenly',
         /** Flex */
-        `flex flex-col md:flex-row w-full items-center justify-center`,
+        'flex flex-col md:flex-row w-full items-center justify-center',
         /** Spacing */
-        `my-8 md:py-20 lg:[height:calc(100vh_-_8rem)] px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24`,
+        'my-8 md:py-20 lg:[height:calc(100vh_-_8rem)] px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24'
       ].join(' ')}
     >
       <div className="w-full">
@@ -29,25 +30,25 @@ function Hero() {
           exit="exit"
           variants={{
             initial: {
-              opacity: 0,
+              opacity: 0
             },
             animate: {
               x: 0,
-              opacity: 1,
+              opacity: 1
             },
             exit: {
-              opacity: 0,
-            },
+              opacity: 0
+            }
           }}
-          transition={{ delay: 0, duration: 0.3, ease: 'easeInOut' }}
+          transition={{ delay: 0, duration: 0.2, ease: 'easeInOut' }}
         >
           <h1
             className={[
               /** Font & Text */
-              `text-3xl lg:text-4xl 2xl:text-6xl font-black leading-[1.2em]`,
+              'text-3xl lg:text-4xl 2xl:text-6xl font-black leading-[1.2em]',
               /** Spacing */
-              `mb-6`,
-              `block`,
+              'mb-6',
+              'block'
             ].join(' ')}
           >
             Professionalism is a Passion.
@@ -59,23 +60,23 @@ function Hero() {
           exit="exit"
           variants={{
             initial: {
-              opacity: 0,
+              opacity: 0
             },
             animate: {
               x: 0,
-              opacity: 1,
+              opacity: 1
             },
             exit: {
-              opacity: 0,
-            },
+              opacity: 0
+            }
           }}
-          transition={{ delay: 0.2, duration: 0.3, ease: 'easeInOut' }}
+          transition={{ delay: 0.1, duration: 0.2, ease: 'easeInOut' }}
           className={[
             /** Spacing */
-            `mb-6`,
+            'mb-6',
             /** Font & Text */
-            `lg:text-lg 2xl:text-xl`,
-            `block mx-auto md:mx-0 max-w-prose md:max-w-none`,
+            'lg:text-lg 2xl:text-xl',
+            'block mx-auto md:mx-0 max-w-prose md:max-w-none'
           ].join(' ')}
         >
           Helping organisations build unforgettable seamless application. I
@@ -88,31 +89,31 @@ function Hero() {
           exit="exit"
           variants={{
             initial: {
-              opacity: 0,
+              opacity: 0
             },
             animate: {
               x: 0,
-              opacity: 1,
+              opacity: 1
             },
             exit: {
-              opacity: 0,
-            },
+              opacity: 0
+            }
           }}
-          transition={{ delay: 0.4, duration: 0.3, ease: 'easeInOut' }}
+          transition={{ delay: 0.2, duration: 0.2, ease: 'easeInOut' }}
           className="flex items-center justify-center mb-6 md:block md:space-x-4"
         >
           <Link prefetch={false} href="mailto:hi@krshkodes.co">
             <a className="w-full mb-8 max-w-max">
               <button
                 className={[
-                  `lg:text-lg 2xl:text-xl`,
-                  `block w-max px-4 py-2`,
-                  `bg-gray-900`,
+                  'lg:text-lg 2xl:text-xl',
+                  'block w-max px-4 py-2',
+                  'bg-gray-900',
                   /** Custom Classes */
-                  'gradient-border',
+                  'gradient-border'
                 ].join(' ')}
               >
-                Let's connect!
+                Let&#39;s connect!
               </button>
             </a>
           </Link>
@@ -123,21 +124,21 @@ function Hero() {
           exit="exit"
           variants={{
             initial: {
-              opacity: 0,
+              opacity: 0
             },
             animate: {
               x: 0,
-              opacity: 1,
+              opacity: 1
             },
             exit: {
-              opacity: 0,
-            },
+              opacity: 0
+            }
           }}
-          transition={{ delay: 0.6, duration: 0.3, ease: 'easeInOut' }}
+          transition={{ delay: 0.3, duration: 0.2, ease: 'easeInOut' }}
           className={[
-            `flex items-center justify-center md:justify-start`,
-            `text-gray-200 lg:text-lg 2xl:text-xl`,
-            `mb-6 space-x-3 md:space-x-6`,
+            'flex items-center justify-center md:justify-start',
+            'text-gray-200 lg:text-lg 2xl:text-xl',
+            'mb-6 space-x-3 md:space-x-6'
           ].join(' ')}
         >
           <Link prefetch={false} href="https://twitter.com/krshkodes">
@@ -194,19 +195,19 @@ function Hero() {
         variants={{
           initial: {
             scale: 1.2,
-            opacity: 0,
+            opacity: 0
           },
           animate: {
             scale: 1,
-            opacity: 1,
+            opacity: 1
           },
           exit: {
             scale: 0.75,
-            opacity: 0,
-          },
+            opacity: 0
+          }
         }}
-        transition={{ delay: 0.8, duration: 0.3, ease: 'easeInOut' }}
-        className="flex w-full scale-75 lg:scale-100 items-center justify-center relative"
+        transition={{ delay: 0.6, duration: 0.5, ease: 'easeInOut' }}
+        className="flex w-full items-center justify-center relative overflow-hidden"
       >
         <div>
           <Image
@@ -219,6 +220,7 @@ function Hero() {
             alt=""
             placeholder="blur"
             loading="lazy"
+            className='scale-75 lg:scale-100 overflow-hidden'
           />
         </div>
       </motion.div>

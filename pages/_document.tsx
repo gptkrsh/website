@@ -1,6 +1,7 @@
+import * as React from 'react'
 import { Html, Head, Main, NextScript } from 'next/document'
 
-export default function Document() {
+export default function Document () {
   return (
     <Html lang='en'>
       <Head>
@@ -28,7 +29,7 @@ export default function Document() {
         <link rel="preconnect" href="https://vitals.vercel-insights.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
       </Head>
-      <body className="min-h-screen text-gray-400 bg-gray-900">
+      <body className="min-h-screen text-gray-400 bg-gray-900 min-w-[350px] overflow-hidden">
         <Main />
         <NextScript />
       </body>
