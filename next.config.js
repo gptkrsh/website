@@ -45,7 +45,6 @@ module.exports = withPlugins([withBundleAnalyzer], {
   httpAgentOptions: {
     keepAlive: false
   },
-  distDir: 'dist',
   reactStrictMode: true,
   devIndicators: {
     buildActivityPosition: 'bottom-right'
