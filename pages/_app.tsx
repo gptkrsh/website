@@ -6,10 +6,20 @@ import 'styles/globals.scss'
 import Head from 'next/head'
 
 import dynamic from 'next/dynamic'
+import splitbee from '@splitbee/web'
 
 const Navbar = dynamic(() => import('components/Layout/Navbar'))
 
 function MyApp ({ Component, pageProps }: AppProps) {
+  React.useEffect(() => {
+    splitbee.init({
+      token: process.env.NEXTJS_SPLITBEE_TOKEN,
+      disableCookie: false,
+      scriptUrl: 'https://cdn.splitbee.io/sb.js',
+      apiUrl: 'https://hive.splitbee.io'
+    })
+  }, [])
+
   return (
     <div>
       <Head>
