@@ -17,10 +17,13 @@ module.exports = withPlugins([withBundleAnalyzer], {
     }
   },
   rewrites: async () => {
-    return []
+    return [{ source: '/projects', destination: '/#projects' }]
   },
   redirects: async () => {
-    return []
+    return [{
+      source: '/links',
+      destination: 'https://links.krshkodes.co'
+    }]
   },
   assetPrefix: isProd ? 'https://raw.githubusercontent.com/krshkodes/krshkodes.co/main/public' : '',
   /**
