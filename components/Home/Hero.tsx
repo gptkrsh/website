@@ -71,11 +71,11 @@ function Hero () {
             <a className="w-full mb-8 max-w-max">
               <button
                 className={[
-                  'lg:text-lg 2xl:text-xl',
+                  'lg:text-lg 2xl:text-xl hover:text-white',
                   'block w-max px-4 py-2',
-                  'bg-gray-900',
-                  /** Custom Classes */
-                  'gradient-border'
+                  'bg-gray-900 hover:bg-brand-500 hover:bg-opacity-25',
+                  'border-2 border-brand-500',
+                  'transition-colors'
                 ].join(' ')}
               >
                 Let&#39;s connect!

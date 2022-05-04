@@ -38,26 +38,3 @@
 
 @tailwind components;
 @tailwind utilities;
-
-.gradient-border {
-  --borderWidth: 3px;
-  position: relative;
-  margin: var(--borderWidth);
-  transition: background-color 0.3s ease-in-out;
-  will-change: background-color;
-
-  &:hover {
-    background-color: rgba(17, 24, 39, 0.8);
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: calc(-1 * var(--borderWidth));
-    left: calc(-1 * var(--borderWidth));
-    height: calc(100% + var(--borderWidth) * 2);
-    width: calc(100% + var(--borderWidth) * 2);
-    background: #5E42E5;
-    z-index: -1;
-  }
-}
