@@ -99,7 +99,7 @@ function Hero () {
               <FiTwitter />
             </a>
           </Link>
-          <Link prefetch={false} href="https://github.com/krshkodes">
+          <Link prefetch={false} href="https://github.com/krshkun">
             <a
               target="_blank"
               className="hover:text-[#fff] hover:rotate-12 transition-all p-4 pl-0"
