@@ -10,8 +10,6 @@ export default class _Document extends Document {
   static async getInitialProps (ctx: DocumentContext) {
     const initialProps = await getInitialProps(ctx)
 
-    // Add your app specific logic here
-
     return {
       ...initialProps,
       styles: [
@@ -47,9 +45,8 @@ export default class _Document extends Document {
           />
           <meta name="og:image" content="" />
           <link rel="preconnect" href="https://vitals.vercel-insights.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
         </Head>
-        <body className="min-h-screen text-gray-400 bg-gray-900 min-w-[350px] overflow-hidden">
+        <body>
           <Main />
           <NextScript />
         </body>

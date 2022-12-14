@@ -1,19 +1,18 @@
 import React from 'react'
 import type { AppProps, NextWebVitalsMetric } from 'next/app'
-import { MantineProvider, createEmotionCache } from '@mantine/core'
-
-import 'styles/globals.scss'
-
-import Head from 'next/head'
 
 import dynamic from 'next/dynamic'
 import splitbee from '@splitbee/web'
 
-const Navbar = dynamic(() => import('components/Layout/Navbar'))
+import { MantineProvider, createEmotionCache, AppShell } from '@mantine/core'
+
+import Head from 'next/head'
+import LoadProgress from 'components/Layout/LoadProgress'
+const MenuHeader = dynamic(() => import('components/Layout/MenuHeader'))
 
 const mantineCache = createEmotionCache({ key: 'mantine' })
 
-function MyApp ({ Component, pageProps }: AppProps) {
+function App ({ Component, pageProps }: AppProps) {
   React.useEffect(() => {
     splitbee.init({
       token: process.env.NEXTJS_SPLITBEE_TOKEN,
@@ -36,12 +35,15 @@ function MyApp ({ Component, pageProps }: AppProps) {
         theme={{
           colorScheme: 'dark',
           cursorType: 'pointer',
-          loader: 'bars'
+          loader: 'bars',
+          primaryColor: 'violet'
         }}
         emotionCache={mantineCache}
       >
-        <Navbar />
-        <Component {...pageProps} />
+        <LoadProgress />
+        <AppShell header={<MenuHeader />}>
+          <Component {...pageProps} />
+        </AppShell>
       </MantineProvider>
     </div>
   )
@@ -51,4 +53,4 @@ export function reportWebVitals (metric: NextWebVitalsMetric) {
   console.log(metric)
 }
 
-export default MyApp
+export default App

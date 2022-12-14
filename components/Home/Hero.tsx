@@ -1,179 +1,255 @@
 import * as React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import HeroIllustration from 'public/assets/images/hero.png'
-import {
-  FiTwitter,
-  FiGithub,
-  FiLinkedin,
-  FiInstagram,
-  FiBook
-} from 'react-icons/fi'
 
-function Hero () {
+import { createStyles, Title, Text, Button, Container } from '@mantine/core'
+import Link from 'next/link'
+
+const useStyles = createStyles((theme) => ({
+  wrapper: {
+    position: 'relative',
+    paddingTop: 120,
+    paddingBottom: 80,
+
+    '@media (max-width: 755px)': {
+      paddingTop: 80,
+      paddingBottom: 60
+    }
+  },
+
+  inner: {
+    position: 'relative',
+    zIndex: 1
+  },
+
+  dots: {
+    position: 'absolute',
+    color: theme.colorScheme === 'dark' ? theme.colors.dark[5] : theme.colors.gray[1],
+
+    '@media (max-width: 755px)': {
+      display: 'none'
+    }
+  },
+
+  dotsLeft: {
+    left: 0,
+    top: 0
+  },
+
+  title: {
+    textAlign: 'center',
+    fontWeight: 800,
+    fontSize: 40,
+    letterSpacing: -1,
+    color: theme.colorScheme === 'dark' ? theme.white : theme.black,
+    marginBottom: theme.spacing.xs,
+    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+
+    '@media (max-width: 520px)': {
+      fontSize: 28,
+      textAlign: 'left'
+    }
+  },
+
+  highlight: {
+    color: theme.colors[theme.primaryColor][theme.colorScheme === 'dark' ? 4 : 6]
+  },
+
+  description: {
+    textAlign: 'center',
+
+    '@media (max-width: 520px)': {
+      textAlign: 'left',
+      fontSize: theme.fontSizes.md
+    }
+  },
+
+  controls: {
+    marginTop: theme.spacing.lg,
+    display: 'flex',
+    justifyContent: 'center',
+
+    '@media (max-width: 520px)': {
+      flexDirection: 'column'
+    }
+  },
+
+  control: {
+    '&:not(:first-of-type)': {
+      marginLeft: theme.spacing.md
+    },
+
+    '@media (max-width: 520px)': {
+      height: 42,
+      fontSize: theme.fontSizes.md,
+
+      '&:not(:first-of-type)': {
+        marginTop: theme.spacing.md,
+        marginLeft: 0
+      }
+    }
+  }
+}))
+
+export default function Hero () {
+  const { classes } = useStyles()
+
   return (
-    <header
-      className={[
-        /** Font & Text */
-        'font-display w-full text-gray-300 text-center md:text-left md:justify-evenly',
-        /** Flex */
-        'flex flex-col md:flex-row w-full items-center justify-center',
-        /** Spacing */
-        'my-8 md:py-20 lg:[height:calc(100vh_-_8rem)] px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-24'
-      ].join(' ')}
-    >
-      <motion.div
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        variants={{
-          initial: {
-            opacity: 0
-          },
-          animate: {
-            x: 0,
-            opacity: 1
-          },
-          exit: {
-            opacity: 0
-          }
-        }}
-        transition={{ duration: 0.3, ease: 'easeInOut' }}
-        className="w-full"
-      >
-        <h1
-          className={[
-            /** Font & Text */
-            'text-3xl lg:text-4xl 2xl:text-6xl font-black leading-[1.2em]',
-            /** Spacing */
-            'mb-6',
-            'block'
-          ].join(' ')}
-        >
-          Professionalism is a Passion.
-        </h1>
-        <p
-          className={[
-            /** Spacing */
-            'mb-6',
-            /** Font & Text */
-            'lg:text-lg 2xl:text-xl',
-            'block mx-auto md:mx-0 max-w-prose md:max-w-none'
-          ].join(' ')}
-        >
-          Helping organisations build unforgettable seamless application. I
-          focus on the frontend, and build exceptionally performant and
-          accessible sites.
-        </p>
-        <div className="flex items-center justify-center mb-6 md:block md:space-x-4">
-          <Link prefetch={false} href="mailto:hi@website">
-            <a className="w-full mb-8 max-w-max">
-              <button
-                className={[
-                  'lg:text-lg 2xl:text-xl hover:text-white',
-                  'block w-max px-4 py-2',
-                  'bg-gray-900 hover:bg-brand-500 hover:bg-opacity-25',
-                  'border-2 border-brand-500',
-                  'transition-colors'
-                ].join(' ')}
-              >
-                Let&#39;s connect!
-              </button>
-            </a>
+    <Container className={classes.wrapper} size={1400}>
+      <Dots className={classes.dots} style={{ left: 0, top: 0 }} />
+      <Dots className={classes.dots} style={{ left: 60, top: 0 }} />
+      <Dots className={classes.dots} style={{ left: 0, top: 140 }} />
+      <Dots className={classes.dots} style={{ right: 0, top: 60 }} />
+
+      <div className={classes.inner}>
+        <Title className={classes.title}>
+          <Text component="span" className={classes.highlight} inherit>
+            Bridging
+          </Text>{' '}
+          the gap between{' '}
+          <Text component="span" className={classes.highlight} inherit>
+            your product
+          </Text>{' '}
+          and developers
+        </Title>
+
+        <Container p={0} size={600}>
+          <Text size="lg" color="dimmed" className={classes.description}>
+            Passionate about bridging the gap between your product and developers. Technical expertise and a love for connecting with others drives me to help developers succeed with your product.
+          </Text>
+        </Container>
+
+        <div className={classes.controls}>
+          <Link prefetch={false} href="https://twitter.com/krshkun" target="_blank">
+            <Button className={classes.control} size="lg" variant="default" color="gray">
+              Message me
+            </Button>
+          </Link>
+          <Link prefetch={false} href="https://cal.com/krshkun" target="_blank">
+            <Button className={classes.control} size="lg">
+              Schedule a video call
+            </Button>
           </Link>
         </div>
-        <div
-          className={[
-            'flex items-center justify-center md:justify-start',
-            'text-gray-200 lg:text-lg 2xl:text-xl',
-            'mb-6 space-x-3 md:space-x-6'
-          ].join(' ')}
-        >
-          <Link prefetch={false} href="https://twitter.com/krshkun">
-            <a
-              target="_blank"
-              className="hover:text-[#1DA1F2] hover:rotate-12 transition-all p-4 pl-0"
-              aria-label="Twitter"
-            >
-              <FiTwitter />
-            </a>
-          </Link>
-          <Link prefetch={false} href="https://github.com/krshkun">
-            <a
-              target="_blank"
-              className="hover:text-[#fff] hover:rotate-12 transition-all p-4 pl-0"
-              aria-label="Github"
-            >
-              <FiGithub />
-            </a>
-          </Link>
-          <Link prefetch={false} href="https://linkedin.com/in/krshkun">
-            <a
-              target="_blank"
-              className="hover:text-[#0A66C2] hover:rotate-12 transition-all p-4 pl-0"
-              aria-label="LinkedIn"
-            >
-              <FiLinkedin />
-            </a>
-          </Link>
-          <Link prefetch={false} href="https://instagram.com/krshkun">
-            <a
-              target="_blank"
-              className="hover:text-[#C13584] hover:rotate-12 transition-all p-4 pl-0"
-              aria-label="Instagram"
-            >
-              <FiInstagram />
-            </a>
-          </Link>
-          <Link prefetch={false} href="https://blog.krshkun.eu.org">
-            <a
-              target="_blank"
-              className="hover:text-[#fff] hover:rotate-12 transition-all p-4 pl-0"
-              aria-label="Blog"
-            >
-              <FiBook />
-            </a>
-          </Link>
-        </div>
-      </motion.div>
-      <motion.div
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        variants={{
-          initial: {
-            scale: 1.2,
-            opacity: 0
-          },
-          animate: {
-            scale: 1,
-            opacity: 1
-          },
-          exit: {
-            scale: 0.75,
-            opacity: 0
-          }
-        }}
-        transition={{ delay: 0.3, duration: 0.5, ease: 'easeInOut' }}
-        className="flex w-full items-center justify-center relative overflow-hidden"
-      >
-        <div>
-          <Image
-            width="371"
-            height="409"
-            sizes="(max-width: 1024px) 315, 347px,
-            (max-width: 768px) 185px, 204.5px"
-            src={HeroIllustration}
-            alt=""
-            placeholder="blur"
-            loading="lazy"
-            className="scale-75 lg:scale-100 overflow-hidden"
-          />
-        </div>
-      </motion.div>
-    </header>
+      </div>
+    </Container>
   )
 }
 
-export default Hero
+interface DotsProps extends React.ComponentPropsWithoutRef<'svg'> {
+  size?: number;
+  radius?: number;
+}
+
+function Dots ({ size = 185, radius = 2.5, ...others }: DotsProps) {
+  return (
+    <svg
+      aria-hidden
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 185 185"
+      width={size}
+      height={size}
+      {...others}
+    >
+      <rect width="5" height="5" rx={radius} />
+      <rect width="5" height="5" x="60" rx={radius} />
+      <rect width="5" height="5" x="120" rx={radius} />
+      <rect width="5" height="5" x="20" rx={radius} />
+      <rect width="5" height="5" x="80" rx={radius} />
+      <rect width="5" height="5" x="140" rx={radius} />
+      <rect width="5" height="5" x="40" rx={radius} />
+      <rect width="5" height="5" x="100" rx={radius} />
+      <rect width="5" height="5" x="160" rx={radius} />
+      <rect width="5" height="5" x="180" rx={radius} />
+      <rect width="5" height="5" y="20" rx={radius} />
+      <rect width="5" height="5" x="60" y="20" rx={radius} />
+      <rect width="5" height="5" x="120" y="20" rx={radius} />
+      <rect width="5" height="5" x="20" y="20" rx={radius} />
+      <rect width="5" height="5" x="80" y="20" rx={radius} />
+      <rect width="5" height="5" x="140" y="20" rx={radius} />
+      <rect width="5" height="5" x="40" y="20" rx={radius} />
+      <rect width="5" height="5" x="100" y="20" rx={radius} />
+      <rect width="5" height="5" x="160" y="20" rx={radius} />
+      <rect width="5" height="5" x="180" y="20" rx={radius} />
+      <rect width="5" height="5" y="40" rx={radius} />
+      <rect width="5" height="5" x="60" y="40" rx={radius} />
+      <rect width="5" height="5" x="120" y="40" rx={radius} />
+      <rect width="5" height="5" x="20" y="40" rx={radius} />
+      <rect width="5" height="5" x="80" y="40" rx={radius} />
+      <rect width="5" height="5" x="140" y="40" rx={radius} />
+      <rect width="5" height="5" x="40" y="40" rx={radius} />
+      <rect width="5" height="5" x="100" y="40" rx={radius} />
+      <rect width="5" height="5" x="160" y="40" rx={radius} />
+      <rect width="5" height="5" x="180" y="40" rx={radius} />
+      <rect width="5" height="5" y="60" rx={radius} />
+      <rect width="5" height="5" x="60" y="60" rx={radius} />
+      <rect width="5" height="5" x="120" y="60" rx={radius} />
+      <rect width="5" height="5" x="20" y="60" rx={radius} />
+      <rect width="5" height="5" x="80" y="60" rx={radius} />
+      <rect width="5" height="5" x="140" y="60" rx={radius} />
+      <rect width="5" height="5" x="40" y="60" rx={radius} />
+      <rect width="5" height="5" x="100" y="60" rx={radius} />
+      <rect width="5" height="5" x="160" y="60" rx={radius} />
+      <rect width="5" height="5" x="180" y="60" rx={radius} />
+      <rect width="5" height="5" y="80" rx={radius} />
+      <rect width="5" height="5" x="60" y="80" rx={radius} />
+      <rect width="5" height="5" x="120" y="80" rx={radius} />
+      <rect width="5" height="5" x="20" y="80" rx={radius} />
+      <rect width="5" height="5" x="80" y="80" rx={radius} />
+      <rect width="5" height="5" x="140" y="80" rx={radius} />
+      <rect width="5" height="5" x="40" y="80" rx={radius} />
+      <rect width="5" height="5" x="100" y="80" rx={radius} />
+      <rect width="5" height="5" x="160" y="80" rx={radius} />
+      <rect width="5" height="5" x="180" y="80" rx={radius} />
+      <rect width="5" height="5" y="100" rx={radius} />
+      <rect width="5" height="5" x="60" y="100" rx={radius} />
+      <rect width="5" height="5" x="120" y="100" rx={radius} />
+      <rect width="5" height="5" x="20" y="100" rx={radius} />
+      <rect width="5" height="5" x="80" y="100" rx={radius} />
+      <rect width="5" height="5" x="140" y="100" rx={radius} />
+      <rect width="5" height="5" x="40" y="100" rx={radius} />
+      <rect width="5" height="5" x="100" y="100" rx={radius} />
+      <rect width="5" height="5" x="160" y="100" rx={radius} />
+      <rect width="5" height="5" x="180" y="100" rx={radius} />
+      <rect width="5" height="5" y="120" rx={radius} />
+      <rect width="5" height="5" x="60" y="120" rx={radius} />
+      <rect width="5" height="5" x="120" y="120" rx={radius} />
+      <rect width="5" height="5" x="20" y="120" rx={radius} />
+      <rect width="5" height="5" x="80" y="120" rx={radius} />
+      <rect width="5" height="5" x="140" y="120" rx={radius} />
+      <rect width="5" height="5" x="40" y="120" rx={radius} />
+      <rect width="5" height="5" x="100" y="120" rx={radius} />
+      <rect width="5" height="5" x="160" y="120" rx={radius} />
+      <rect width="5" height="5" x="180" y="120" rx={radius} />
+      <rect width="5" height="5" y="140" rx={radius} />
+      <rect width="5" height="5" x="60" y="140" rx={radius} />
+      <rect width="5" height="5" x="120" y="140" rx={radius} />
+      <rect width="5" height="5" x="20" y="140" rx={radius} />
+      <rect width="5" height="5" x="80" y="140" rx={radius} />
+      <rect width="5" height="5" x="140" y="140" rx={radius} />
+      <rect width="5" height="5" x="40" y="140" rx={radius} />
+      <rect width="5" height="5" x="100" y="140" rx={radius} />
+      <rect width="5" height="5" x="160" y="140" rx={radius} />
+      <rect width="5" height="5" x="180" y="140" rx={radius} />
+      <rect width="5" height="5" y="160" rx={radius} />
+      <rect width="5" height="5" x="60" y="160" rx={radius} />
+      <rect width="5" height="5" x="120" y="160" rx={radius} />
+      <rect width="5" height="5" x="20" y="160" rx={radius} />
+      <rect width="5" height="5" x="80" y="160" rx={radius} />
+      <rect width="5" height="5" x="140" y="160" rx={radius} />
+      <rect width="5" height="5" x="40" y="160" rx={radius} />
+      <rect width="5" height="5" x="100" y="160" rx={radius} />
+      <rect width="5" height="5" x="160" y="160" rx={radius} />
+      <rect width="5" height="5" x="180" y="160" rx={radius} />
+      <rect width="5" height="5" y="180" rx={radius} />
+      <rect width="5" height="5" x="60" y="180" rx={radius} />
+      <rect width="5" height="5" x="120" y="180" rx={radius} />
+      <rect width="5" height="5" x="20" y="180" rx={radius} />
+      <rect width="5" height="5" x="80" y="180" rx={radius} />
+      <rect width="5" height="5" x="140" y="180" rx={radius} />
+      <rect width="5" height="5" x="40" y="180" rx={radius} />
+      <rect width="5" height="5" x="100" y="180" rx={radius} />
+      <rect width="5" height="5" x="160" y="180" rx={radius} />
+      <rect width="5" height="5" x="180" y="180" rx={radius} />
+    </svg>
+  )
+}

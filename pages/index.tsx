@@ -8,9 +8,9 @@ const Hero = dynamic(() => import('components/Home/Hero'))
 
 const Home: NextPage = () => {
   return (
-    <div className="space-y-12 lg:space-y-40">
+    <>
       <Hero />
-    </div>
+    </>
   )
 }
 
