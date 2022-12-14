@@ -1,5 +1,6 @@
 import React from 'react'
 import type { AppProps, NextWebVitalsMetric } from 'next/app'
+import { MantineProvider, createEmotionCache } from '@mantine/core'
 
 import 'styles/globals.scss'
 
@@ -9,6 +10,8 @@ import dynamic from 'next/dynamic'
 import splitbee from '@splitbee/web'
 
 const Navbar = dynamic(() => import('components/Layout/Navbar'))
+
+const mantineCache = createEmotionCache({ key: 'mantine' })
 
 function MyApp ({ Component, pageProps }: AppProps) {
   React.useEffect(() => {
@@ -24,13 +27,22 @@ function MyApp ({ Component, pageProps }: AppProps) {
     <div>
       <Head>
         <title>
-          Student Full Stack Developer from Delhi | Krish Gupta | krshkodes
+          Student Full Stack Developer from Delhi | Krish Gupta | krshkun
         </title>
       </Head>
-      <React.Fragment>
+      <MantineProvider
+        withGlobalStyles
+        withNormalizeCSS
+        theme={{
+          colorScheme: 'dark',
+          cursorType: 'pointer',
+          loader: 'bars'
+        }}
+        emotionCache={mantineCache}
+      >
         <Navbar />
         <Component {...pageProps} />
-      </React.Fragment>
+      </MantineProvider>
     </div>
   )
 }

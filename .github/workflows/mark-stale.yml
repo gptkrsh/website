@@ -8,7 +8,7 @@ on:
 
 jobs:
   stale:
-    if: github.repository_owner == 'krshkodes'
+    if: github.repository_owner == 'krshkun'
     runs-on: ubuntu-latest
 
     steps:

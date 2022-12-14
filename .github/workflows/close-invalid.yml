@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   close-on-adding-invalid-label:
-    if: github.event.label.name == 'invalid' && github.repository_owner == 'krshkodes'
+    if: github.event.label.name == 'invalid' && github.repository_owner == 'krshkun'
     runs-on: ubuntu-latest
 
     steps:

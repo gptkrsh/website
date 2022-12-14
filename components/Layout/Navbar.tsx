@@ -43,7 +43,7 @@ export default function Navbar () {
               'transition-transform hover:-translate-y-0.5 hover:scale-110'
             ].join(' ')}
           >
-            krshkodes
+            krshkun
           </a>
         </Link>
       </motion.div>

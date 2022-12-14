@@ -67,7 +67,7 @@ function Hero () {
           accessible sites.
         </p>
         <div className="flex items-center justify-center mb-6 md:block md:space-x-4">
-          <Link prefetch={false} href="mailto:hi@krshkodes.co">
+          <Link prefetch={false} href="mailto:hi@website">
             <a className="w-full mb-8 max-w-max">
               <button
                 className={[
@@ -90,7 +90,7 @@ function Hero () {
             'mb-6 space-x-3 md:space-x-6'
           ].join(' ')}
         >
-          <Link prefetch={false} href="https://twitter.com/krshkodes">
+          <Link prefetch={false} href="https://twitter.com/krshkun">
             <a
               target="_blank"
               className="hover:text-[#1DA1F2] hover:rotate-12 transition-all p-4 pl-0"
@@ -108,7 +108,7 @@ function Hero () {
               <FiGithub />
             </a>
           </Link>
-          <Link prefetch={false} href="https://linkedin.com/in/krshkodes">
+          <Link prefetch={false} href="https://linkedin.com/in/krshkun">
             <a
               target="_blank"
               className="hover:text-[#0A66C2] hover:rotate-12 transition-all p-4 pl-0"
@@ -117,7 +117,7 @@ function Hero () {
               <FiLinkedin />
             </a>
           </Link>
-          <Link prefetch={false} href="https://instagram.com/krshkodes">
+          <Link prefetch={false} href="https://instagram.com/krshkun">
             <a
               target="_blank"
               className="hover:text-[#C13584] hover:rotate-12 transition-all p-4 pl-0"
@@ -126,7 +126,7 @@ function Hero () {
               <FiInstagram />
             </a>
           </Link>
-          <Link prefetch={false} href="https://blog.krshkodes.co">
+          <Link prefetch={false} href="https://blog.krshkun.eu.org">
             <a
               target="_blank"
               className="hover:text-[#fff] hover:rotate-12 transition-all p-4 pl-0"
@@ -160,7 +160,6 @@ function Hero () {
       >
         <div>
           <Image
-            layout="raw"
             width="371"
             height="409"
             sizes="(max-width: 1024px) 315, 347px,

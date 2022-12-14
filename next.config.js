@@ -1,30 +1,13 @@
+// @ts-check
 const withPlugins = require('next-compose-plugins')
-const isProd = process.env.NODE_ENV === 'production'
-
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: isProd
+const withMDX = require('@next/mdx')({
+  extension: /\.(md|mdx)$/
 })
 
 /** @type {import('next').NextConfig} */
-module.exports = withPlugins([withBundleAnalyzer], {
-  images: {
-    formats: ['image/webp']
-  },
-  experimental: {
-    images: {
-      layoutRaw: true
-    }
-  },
-  rewrites: async () => {
-    return [{ source: '/projects', destination: '/#projects' }]
-  },
-  redirects: async () => {
-    return [{
-      source: '/links',
-      destination: 'https://links.krshkodes.co',
-      permanent: true
-    }]
-  },
+module.exports = withPlugins([withMDX], ({
+  eslint: { ignoreDuringBuilds: true },
+  typescript: { tsconfigPath: './tsconfig.json' },
   /**
    *
    * @param {import('webpack').Configuration} config
@@ -32,7 +15,7 @@ module.exports = withPlugins([withBundleAnalyzer], {
    * @returns {import('webpack').Configuration}
    */
   webpack: (config, { buildId, dev, isServer, defaultLoaders }) => {
-    if (!dev && !isServer) {
+    if (!dev && !isServer && config.resolve?.alias) {
       Object.assign(config.resolve.alias, {
         react: 'preact/compat',
         'react-dom/test-utils': 'preact/test-utils',
@@ -42,13 +25,19 @@ module.exports = withPlugins([withBundleAnalyzer], {
 
     return config
   },
+  trailingSlash: false,
+  env: {},
+  distDir: 'dist',
+  pageExtensions: ['mdx', 'md', 'jsx', 'js', 'tsx', 'ts'],
   compress: true,
   poweredByHeader: false,
-  httpAgentOptions: {
-    keepAlive: false
+  images: {
+    formats: ['image/webp']
   },
-  reactStrictMode: true,
-  devIndicators: {
-    buildActivityPosition: 'bottom-right'
+  productionBrowserSourceMaps: true,
+  swcMinify: true,
+  experimental: {
+    optimisticClientCache: true,
+    legacyBrowsers: true
   }
-})
+}))
