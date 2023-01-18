@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { createStyles, Header, Group, ActionIcon, Container, Text } from '@mantine/core'
-import { IconBrandLinktree } from '@tabler/icons'
+import { IconLink } from '@tabler/icons'
 import Link from 'next/link'
 
 const useStyles = createStyles((theme) => ({
@@ -35,9 +35,9 @@ export default function MenuHeader () {
         <Text>krsh</Text>
 
         <Group spacing={0} className={classes.social} position="right" noWrap>
-          <Link prefetch={false} href="https://linktr.ee/krshkun" rel="noopener noreferrer" target="_blank">
+          <Link prefetch={false} href="https://links.krsh.eu.org" rel="noopener noreferrer" target="_blank">
             <ActionIcon size="lg">
-              <IconBrandLinktree size={18} stroke={1.5} />
+              <IconLink size={18} stroke={1.5} />
             </ActionIcon>
           </Link>
         </Group>
