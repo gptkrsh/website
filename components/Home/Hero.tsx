@@ -118,12 +118,12 @@ export default function Hero () {
         </Container>
 
         <div className={classes.controls}>
-          <Link prefetch={false} href="https://twitter.com/krshkun" target="_blank">
+          <Link prefetch={false} href="https://links.krsh.eu.org/links/https%3A%2F%2Ftwitter.com%2Fkrshkun" target="_blank">
             <Button className={classes.control} size="lg" variant="default" color="gray">
               Message me
             </Button>
           </Link>
-          <Link prefetch={false} href="https://cal.com/krshkun" target="_blank">
+          <Link prefetch={false} href="https://links.krsh.eu.org/links/https%3A%2F%2Fcal.com%2Fkrshg" target="_blank">
             <Button className={classes.control} size="lg">
               Schedule a video call
             </Button>
